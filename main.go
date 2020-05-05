@@ -12,8 +12,8 @@ import (
 )
 
 func ok(err error, location string) {
-	fmt.Fprintf(os.Stderr, "There was an error at %s\n", location)
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "There was an error at %s\n", location)
 		fmt.Fprintf(os.Stderr, "error: %s", err.Error())
 		os.Exit(1)
 	}
