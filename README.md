@@ -34,3 +34,8 @@ Example Run. This will scan 5 hosts at a time using a random SSH server from a f
 -ssh-server-file ssh_list.txt \
 -c "rumble -S false --probes connect --text --output-raw - -o disable --nowait -p 80,443,8443,8080 %s" | tee -a rumble_web.jsonl
 ```
+
+Rumble makes it easy to generate a scan from this file with `--import`:
+```
+# rumble --import rumble_web.jsonl --text
+```
